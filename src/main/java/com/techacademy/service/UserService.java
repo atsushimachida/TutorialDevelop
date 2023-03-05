@@ -10,7 +10,7 @@ import com.techacademy.repository.UserRepository;
 @Service
 public class UserService {
     private final UserRepository userRepository;
-
+    
     public UserService(UserRepository repository) {
         this.userRepository = repository;
     }
@@ -26,13 +26,12 @@ public class UserService {
         return userRepository.findById(id).get();
     }
     
-    
-    
      //**Userの追加登録を行う*/
     @Transactional
     public User saveUser(User user) {
         return userRepository.save(user);
     }
+    
     
     @Transactional
     public void deleteUser(Set<Integer> idck) {

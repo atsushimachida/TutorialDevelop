@@ -18,6 +18,7 @@
             <option value="" th:text="選択してください">
             <option th:each="item:${T(com.techacademy.entity.User.Gender).values()}" th:value="${item}" th:text="${item}">
         </select>
+        
         <br>
         <label for="age">年齢</label>
         <input type="text" th:field="*{age}">

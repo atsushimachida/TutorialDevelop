@@ -19,7 +19,6 @@ import com.techacademy.service.UserService;
 @RequestMapping("user")
 public class UserController {
     private final UserService service;
-
     public UserController(UserService service) {
         this.service = service;
     }
@@ -39,8 +38,7 @@ public class UserController {
         // User登録画面に遷移
         return "user/register";
     }
-   
-
+    
     /** User登録処理 */
     @PostMapping("/register")
     public String postRegister(@Validated User user,BindingResult res,Model model) {
