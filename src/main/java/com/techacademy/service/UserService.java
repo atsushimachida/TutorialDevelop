@@ -1,6 +1,7 @@
 package com.techacademy.service;
 
 import java.util.List;
+import java.util.Set;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.techacademy.entity.User;
@@ -33,5 +34,11 @@ public class UserService {
         return userRepository.save(user);
     }
     
+    @Transactional
+    public void deleteUser(Set<Integer> idck) {
+        for(Integer id :idck) {
+            userRepository.deleteById(id);
+        }
+    }
     
 }
