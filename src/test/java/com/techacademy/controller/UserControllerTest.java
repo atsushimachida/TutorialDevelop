@@ -52,7 +52,7 @@ class UserControllerTest {
             .andExpect(status().isOk()) // ステータスを確認
             .andExpect(model().attributeExists("user")) // Modelの内容を確認
             .andExpect(model().hasNoErrors()) // Modelのエラー有無の確認
-            .andExpect(view().name("user/update")) // viewの確認
+            .andExpect(view().name("/user/update")) // viewの確認
             .andReturn(); // 内容の取得
 
         // userの検証
